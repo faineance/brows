@@ -1,0 +1,11 @@
+[package]
+name = "brows"
+version = "0.1.0"
+authors = ["faineance <faineance@users.noreply.github.com>"]
+
+[dependencies]
+glium = "*"
+rusttype = "*"
+html5ever = "*"
+html5ever-atoms = "*"
+unicode-normalization = "*"
