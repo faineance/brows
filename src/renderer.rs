@@ -89,10 +89,11 @@ impl<'a> Renderer<'a> {
         let uniforms = uniform! {
             tex: self.cache_texture.sampled().magnify_filter(glium::uniforms::MagnifySamplerFilter::Nearest)
         };
-        let vectices =
-            glium::VertexBuffer::new(self.display,
-                                     &retrieve_glyphs_from_cache(&self.cache, self.display, &glyphs))
-                .unwrap();
+        let vectices = glium::VertexBuffer::new(self.display,
+                                                &retrieve_glyphs_from_cache(&self.cache,
+                                                                            self.display,
+                                                                            &glyphs))
+            .unwrap();
         target.draw(&vectices,
                   glium::index::NoIndices(glium::index::PrimitiveType::TrianglesList),
                   &self.program,
